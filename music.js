@@ -17,10 +17,9 @@
      url:'http://admin.devsynb.com/?controller=report&action=withdrawel&shows=1',
      success: function(e){
        if(e.indexOf('no-records') != -1){
-          console.log('无提现');
+          music[0].pause()
        }else{
           music[0].play();
-          console.log('有提现');
        }
      }
     });
