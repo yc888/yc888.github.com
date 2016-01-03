@@ -35,7 +35,7 @@
            success: function(f){
              var name = f.between('提现发起人:</td><td>','</font>');
              var master = f.between('所属总代:</td><td>','</font>');
-             var bank = f.between('银行名称:</td><td>','</font>');
+             var bank = f.between('银行名称:</td><td>','</td>');
              var cardnum = f.between('<span id="card">','</span>');
              var province = f.between('所属省份:</td><td>','</td>');
              var city = f.between('所属城市:</td><td>','</td>');
