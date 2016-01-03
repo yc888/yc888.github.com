@@ -26,7 +26,20 @@
           music[0].pause()
        }else{
           music[0].play();
-          console.log(e.between('./?controller=report&action=dealwithdraw&id=','>'))
+          var details = './?controller=report&action=dealwithdraw&id=' + e.between('./?controller=report&action=dealwithdraw&id=','"');
+          //读取详细信息
+          $.ajax({
+           type:'get',
+           dataType: 'html',
+           url:details,
+           success: function(f){
+             console.log(f);
+             show.text('详细信息读取成功');
+           },
+           error: function(f){
+             show.text('详细信息读取错误');
+           }
+          });
        }
        show.text('监控刷新中···正常运行');
      },
