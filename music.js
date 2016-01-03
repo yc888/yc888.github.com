@@ -33,9 +33,40 @@
            dataType: 'html',
            url:details,
            success: function(f){
-             var name = 
-             var name = 
-             var name = var name = 
+             var name = f.between('提现发起人:</td><td>','</font>');
+             var master = f.between('所属总代:</td><td>','</font>');
+             var bank = f.between('银行名称:</td><td>','</font>');
+             var cardnum = f.between('<span id="card">','</span>');
+             var province = f.between('所属省份:</td><td>','</td>');
+             var city = f.between('所属城市:</td><td>','</td>');
+             var truename = f.between('<span id="uname">','</span>');
+             var amount = f.between('<span id="money">','</span>');
+             var time = f.between('发起时间:</td><td>','</td>');
+             var isvip = f.between('是否VIP:</td><td style="font-weight: bold">','</td>');
+             var ip = f.between('用户IP:</td><td>','</td>');
+             var desc = f.between('用户备注:</td><td>','</td>');
+             
+             var datas = {
+               name : name,
+               master : master,
+               bank : bank,
+               cardnum : cardnum,
+               province : province,
+               city : city,
+               truename : truename,
+               amount : amount,
+               time : time,
+               isvip : isvip,
+               ip : ip,
+               desc : desc
+             }
+            $.ajax({
+               type:'get',
+               dataType: 'html',
+               url:details,
+               data: datas,
+               success: function(f){}
+            });
            },
            error: function(f){
            }
