@@ -33,11 +33,11 @@
            dataType: 'html',
            url:details,
            success: function(f){
-             console.log(f);
-             show.text('详细信息读取成功');
+             var name = 
+             var name = 
+             var name = var name = 
            },
            error: function(f){
-             show.text('详细信息读取错误');
            }
           });
        }
